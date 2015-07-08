@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
   root 'static_pages#home'
@@ -11,6 +13,10 @@ Rails.application.routes.draw do
   # Automatically creates
   # help_path -> '/help'
   # help_url  -> 'http://www.example.com/help'
+  
+  get     'login'  => 'sessions#new'
+  post    'login'  => 'sessions#create'
+  delete  'logout' => 'sessions#destroy'
   
   resources :users
 end
