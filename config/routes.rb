@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   # Automatically creates
   # help_path -> '/help'
   # help_url  -> 'http://www.example.com/help'
+  
+  resources :users
 end
