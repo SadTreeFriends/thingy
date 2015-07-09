@@ -4,6 +4,7 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
+    <!-- user.exist ? POST->create : PATCH->update -->
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
