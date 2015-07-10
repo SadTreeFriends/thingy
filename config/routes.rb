@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   delete  'logout' => 'sessions#destroy'
   
   resources :users
+  resources :account_activations, only: [:edit] # provide route only for edit action
 end
