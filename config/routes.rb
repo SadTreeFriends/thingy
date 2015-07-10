@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   resources :users
   resources :account_activations, only: [:edit] # provide route only for edit action
   resources :password_resets,     only: [:new, :create, :edit, :update]
+  resources :microposts,          only: [:create, :destroy]
 end
