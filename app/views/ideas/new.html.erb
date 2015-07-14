@@ -1,41 +1,55 @@
-<h1>Submit Idea</h1>
+<div class="page-header">
+  <h2>Submit an idea</h2>
+</div>
 
 <div class="container">
-    <div class="row">
-      <h2 style="font-size:2em">Need some inspiration?
-        <%= link_to 'Regenerate', '#', class: "btn btn-med btn-primary" %> or
-        <%= link_to 'Fork an existing idea', '#' %>
-        </h2>
-    </div>
-
-    <div class="row">
-        <div class="col-md-3 center">
-            <h2>You should build</h2>
-            <h1><span class="label label-info inspirationlabel">a game</span></h1>
-        </div>
-        <div class="col-md-3 center">
-          <h2>about</h2>
-          <h1><span class="label label-info inspirationlabel">sports</span></h1>
-        </div>
-        <div class="col-md-3 center">
-          <h2>for selling</h2>
-          <h1><span class="label label-info inspirationlabel">services</span></h1>
-        </div>
-    </div>
-
-  <div class="row" style="padding: 30px">
+  <div class="row">
     <div class="col-md-8">
-      <%= form_for(:session, url: login_path) do |f| %>
+      <%= form_for(:ideas) do |f| %>
 
-          Wouldn't it be cool, if:
-          <%= f.text_field :title, class: 'form-control' %>
+          <h3>Wouldn't it be cool if ...</h3>
+          <%= f.text_field :title, class: 'form-control',
+                           placeholder: 'There was a website about ideas for making loads of cash' %>
 
           Description
-          <%= f.text_area :description, class: 'form-control' %>
+          <%= f.text_area :description, class: 'form-control', placeholder: 'Add some detail..' %>
 
-          <%= f.submit "Submit", class: "btn btn-primary" %>
+          <div class="col-md-2" style="padding:0; margin-bottom:20px">
+            <%= f.submit "Submit", class: "btn btn-primary" %>
+          </div>
       <% end %>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-4">
+          <h3>Need some inspiration?</h3>
+    </div>
+    <div class="col-md-3" style="padding:0; margin-top:20px">
+        <%= link_to 'Regenerate', '#', class: "btn btn-sm btn-warning" %> or
+        <%= link_to 'Fork an existing idea', ideas_path %>
+    </div>
+  </div>
+
+    <div class="row inspiration">
+        <div class="col-md-3 center">
+            <p class="lead">You should build</p>
+            <div class="alert alert-info">
+              <h2>a website</h2>
+            </div>
+        </div>
+        <div class="col-md-3 center">
+          <p class="lead">about</p>
+          <div class="alert alert-info">
+            <h2>ideas</h2>
+          </div>
+        </div>
+        <div class="col-md-3 center">
+          <p class="lead">for making</p>
+          <div class="alert alert-info">
+            <h2>loads of cash</h2>
+          </div>
+        </div>
+    </div>
 </div>
 

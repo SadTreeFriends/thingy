@@ -20,11 +20,12 @@ class IdeasController < ApplicationController
   end
 
   def index
-
+    @idea  = current_user.ideas.build
+    @feed_items = current_user.feed.paginate(page: params[:page])
   end
 
   def new
-
+    @idea = Idea.new
   end
 
   private
