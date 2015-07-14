@@ -44,15 +44,14 @@ h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
-  text-align: center;
+  //text-align: center;
   //font-weight: bold;
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 2em;
   letter-spacing: 0px;
   margin-bottom: 30px;
-  text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -78,6 +77,10 @@ p {
     color: dodgerblue;
     text-decoration: none;
   }
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+  display: block;
 }
 
 #logo-dot {
@@ -320,4 +323,16 @@ span.picture {
   input {
     border: 0;
   }
+}
+
+/* submit an idea */
+
+.inspiration {
+  background-color: #30AEFF;
+  color: white;
+  font-size: 2em;
+}
+
+.inspirationlabel {
+  font-weight: normal;
 }

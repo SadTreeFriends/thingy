@@ -19,8 +19,12 @@ class IdeasController < ApplicationController
     redirect_to request.referrer || root_url
   end
 
-  def show
-    
+  def index
+
+  end
+
+  def new
+
   end
 
   private

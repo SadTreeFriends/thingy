@@ -1,0 +1,41 @@
+<h1>Submit Idea</h1>
+
+<div class="container">
+    <div class="row">
+      <h2 style="font-size:2em">Need some inspiration?
+        <%= link_to 'Regenerate', '#', class: "btn btn-med btn-primary" %> or
+        <%= link_to 'Fork an existing idea', '#' %>
+        </h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 center">
+            <h2>You should build</h2>
+            <h1><span class="label label-info inspirationlabel">a game</span></h1>
+        </div>
+        <div class="col-md-3 center">
+          <h2>about</h2>
+          <h1><span class="label label-info inspirationlabel">sports</span></h1>
+        </div>
+        <div class="col-md-3 center">
+          <h2>for selling</h2>
+          <h1><span class="label label-info inspirationlabel">services</span></h1>
+        </div>
+    </div>
+
+  <div class="row" style="padding: 30px">
+    <div class="col-md-8">
+      <%= form_for(:session, url: login_path) do |f| %>
+
+          Wouldn't it be cool, if:
+          <%= f.text_field :title, class: 'form-control' %>
+
+          Description
+          <%= f.text_area :description, class: 'form-control' %>
+
+          <%= f.submit "Submit", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
