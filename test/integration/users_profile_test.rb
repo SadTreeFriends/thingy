@@ -13,10 +13,10 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     assert_select 'title', full_title(@user.name)
     assert_select 'h1', text: @user.name
     assert_select 'h1>img.gravatar'   # check inside h1 for img tag with class gravatar
-    assert_match @user.microposts.count.to_s, response.body
+    assert_match @user.ideas.count.to_s, response.body
     assert_select 'div.pagination'
-    @user.microposts.paginate(page: 1).each do |micropost|
-      assert_match micropost.content, response.body
+    @user.ideas.paginate(page: 1).each do |idea|
+      assert_match idea.content, response.body
     end
     # Stats test
     assert_match @user.following.count.to_s, response.body

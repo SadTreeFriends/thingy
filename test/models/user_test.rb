@@ -66,10 +66,10 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test 'associated microposts should be destroyed' do
+  test 'associated ideas should be destroyed' do
     @user.save
-    @user.microposts.create!(content: 'Lorem ipsum')
-    assert_difference 'Micropost.count', -1 do
+    @user.ideas.create!(content: 'Lorem ipsum')
+    assert_difference 'Idea.count', -1 do
       @user.destroy
     end
   end
@@ -90,15 +90,15 @@ class UserTest < ActiveSupport::TestCase
     archer  = users(:archer)
     lana    = users(:lana)
     # Posts from followed user
-    lana.microposts.each do |post_following|
+    lana.ideas.each do |post_following|
       assert michael.feed.include?(post_following)
     end
     # Posts from self
-    michael.microposts.each do |post_self|
+    michael.ideas.each do |post_self|
       assert michael.feed.include?(post_self)
     end
     # Posts from unfollowed user
-    archer.microposts.each do |post_unfollowed|
+    archer.ideas.each do |post_unfollowed|
       assert_not michael.feed.include?(post_unfollowed)
     end
   end

@@ -1,9 +1,11 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "sample app", root_path, id: "logo" %>
+    <%= link_to "idea", root_path, id: "logo1" %>
+    <%= link_to ".", root_path, id: "logo-dot" %>
+    <%= link_to "brew", root_path, id: "logo2" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home",   root_path %></li>
+        <li><%= link_to "Ideas",   ideas_path %></li>
         <li><%= link_to "Help",   help_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Users", users_path %></li>

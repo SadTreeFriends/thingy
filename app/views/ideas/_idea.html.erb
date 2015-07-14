@@ -1,0 +1,14 @@
+<li id="idea-<%= idea.id %>">
+  <%= link_to gravatar_for(idea.user, size:50), idea.user %>
+  <span class="user"><%= link_to idea.user.name, idea.user %></span>
+  <span class="content">
+    <%= idea.content %>
+    <%= image_tag(idea.picture.url) if idea.picture? %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(idea.created_at) %> ago.
+    <% if current_user?(idea.user) %>
+        <%= link_to "delete", idea, method: :delete, data: { confrim: "You sure?" } %>
+    <% end %>
+  </span>
+</li>

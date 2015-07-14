@@ -64,18 +64,45 @@ p {
   
 /* header */
   
-#logo {
+#logo1 {
   float: left;
-  margin-right: 10px;
+  margin-right: 0;
   font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
+  color: #FFA930;
+  //text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
   
   &:hover {
-    color: white;
+    color: dodgerblue;
+    text-decoration: none;
+  }
+}
+
+#logo-dot {
+  font-family: "Times New Roman", Times, serif;
+  float: left;
+  margin-right: 0;
+  font-size: 1.7em;
+  color: lightgray;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo2 {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #30AEFF;
+  //text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  &:hover {
+    color: dodgerblue;
     text-decoration: none;
   }
 }
@@ -248,9 +275,9 @@ input {
   }
 }
 
-/* microposts */
+/* ideas */
 
-.microposts {
+.ideas {
   list-style: none;
   padding: 0;
   li {
