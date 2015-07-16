@@ -156,7 +156,7 @@ aside {
       text-align: left;
       letter-spacing: -1px;
       margin-bottom: 3px;
-      margin-top: 0px;
+      margin-top: 0;
     }
   }
 }
@@ -264,29 +264,44 @@ input {
 
 /* ideas */
 
-.ideas {
+.ctr-max-width {
+  max-width: 800px;
+}
+
+.ideas-list {
   list-style: none;
   padding: 0;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
+    margin-bottom: 10px;
+  }
+  .title {
+    //display: block;
+    font-size: 1.2em;
   }
   .user {
     margin-top: 5em;
     padding-top: 0;
+    font-size: 0.8em;
+    .timestamp {
+      color: $gray-light;
+      margin-left: 5px;
+    }
   }
   .content {
     display: block;
     margin-left: 60px;
+    margin-bottom: 10px;
     img {
       display: block;
-      padding: 5px 0;
+      float: right;
     }
   }
-  .timestamp {
+  .delete {
     color: $gray-light;
-    display: block;
-    margin-left: 60px;
+    //display: block;
+    margin-left: 5px;
   }
   .gravatar {
     float: left;
@@ -312,5 +327,27 @@ span.picture {
 /* submit an idea */
 
 .inspiration {
+  margin-left:15px;
   margin-top: 20px;
+  h3 {
+    display:inline;
+  }
+  .links {
+    padding:0;
+    margin-left:10px;
+  }
+  .examples {
+    margin-top: 20px;
+  }
+}
+
+.submit-idea {
+  textarea {
+    height: 100px;
+  }
+}
+
+.submit-button {
+  padding:0;
+  margin-bottom:20px;
 }

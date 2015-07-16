@@ -28,10 +28,14 @@ class IdeasController < ApplicationController
     @idea = Idea.new
   end
 
+  def show
+    @idea = Idea.find(params[:id])
+  end
+
   private
 
     def idea_params
-      params.require(:idea).permit(:content, :picture)
+      params.require(:idea).permit(:title, :content, :picture)
     end
 
     def correct_user
