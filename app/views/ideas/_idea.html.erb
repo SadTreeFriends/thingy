@@ -1,32 +1,32 @@
 <div class="row">
   <li id="idea-<%= idea.id %>">
     <div class="col-md-8 ">
-      <%= link_to gravatar_for(idea.user, size:50), idea.user %>
-      <span class="title">
-        <% if idea.title.nil? %>
-            <%= link_to 'Untitled', idea_path(idea) %>
-        <% else %>
-            <%= link_to idea.title, idea_path(idea) %>
-        <% end %>
-      </span>
-      <span class="delete">
-        <% if current_user?(idea.user) %>
-            <%= link_to "delete", idea, method: :delete,
-                        class: 'btn btn-xs btn-warning',
-                        data: { confirm: "You sure?" } %>
-        <% end %>
-      </span>
-        <div class="row">
-      <span class="user">
-        <%= link_to idea.user.name, idea.user %>
-        <span class="timestamp">
-            <%= time_ago_in_words(idea.created_at) %> ago
+        <%= link_to gravatar_for(idea.user, size:50), idea.user %>
+        <span class="title">
+          <% if idea.title.nil? %>
+              <%= link_to 'Untitled', idea_path(idea) %>
+          <% else %>
+              <%= link_to idea.title, idea_path(idea) %>
+          <% end %>
         </span>
-      </span>
+        <span class="delete">
+          <% if current_user?(idea.user) %>
+              <%= link_to "delete", idea, method: :delete,
+                          class: 'btn btn-xs btn-warning',
+                          data: { confirm: "You sure?" } %>
+          <% end %>
+        </span>
+        <div class="row">
+          <span class="user">
+            <%= link_to idea.user.name, idea.user %>
+            <span class="timestamp">
+                <%= time_ago_in_words(idea.created_at) %> ago
+            </span>
+          </span>
         </div>
-      <div class="content">
-        <%= idea.content %>
-      </div>
+        <div class="content">
+          <%= content_excerpt(idea.content) %>
+        </div>
       </div>
       <div class="col-md-4">
         <%= image_tag(idea.picture.url, class:'img-responsive') if idea.picture? %>

@@ -38,6 +38,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  margin-top: 5px;
 }
 
 p {
@@ -327,14 +328,14 @@ span.picture {
 /* submit an idea */
 
 .inspiration {
-  margin-left:15px;
+  margin-left: 15px;
   margin-top: 20px;
   h3 {
-    display:inline;
+    display: inline;
   }
   .links {
     padding:0;
-    margin-left:10px;
+    margin-left: 10px;
   }
   .examples {
     margin-top: 20px;
@@ -349,5 +350,33 @@ span.picture {
 
 .submit-button {
   padding:0;
-  margin-bottom:20px;
+  margin-bottom: 20px;
+}
+
+/* idea show */
+#subtitle {
+  text-transform: uppercase;
+  color: gray;
+}
+
+#idea-show {
+  padding: 0;
+  .user {
+    margin: 0;
+    padding-top: 0;
+    font-size: 0.8em;
+    .timestamp {
+      color: $gray-light;
+      margin-left: 5px;
+    }
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    img {
+      display: block;
+      float: right;
+    }
+  }
 }
